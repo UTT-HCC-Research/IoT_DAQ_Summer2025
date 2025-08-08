@@ -1,5 +1,7 @@
 # Solar Charging Station for Micro-Mobility and Portable Devices
 
+<img src="https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/images/flowchart.png" alt="chart1" width="1000" height="500">
+
 ## Team Members
 - 
 - 
