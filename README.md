@@ -122,6 +122,9 @@ This system harnesses solar energy and hydrogen fuel cells to charge devices. It
 - Define `/DeviceId` partition key
 - Route telemetry from IoT Hub
 
+### Results from the Sample Dataset pulled from the System
+<img src="https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/images/plots.png" alt="chart2" width="1000" height="500">
+
 ---
 
 ## Deployment & Testing
