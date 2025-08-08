@@ -1,64 +1,152 @@
-# Solar and Fuel Cell Powered DAQ System
+# Solar Charging Station for Micro-Mobility and Portable Devices
 
-<img src="https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/images/flowchart.png" alt="chart1" width="1000" height="500">
-
-This repository is the official user documentation for the UT Tyler - HCC - ARM Summer 2025 Solar Charging Station Project. The station is designed for charging micro-mobility and portable devices using solar power and hydrogen fuel cells, with an integrated IoT-based data acquisition (DAQ) system.
-
-## Overview
-This system is a mobile, off-grid solution that uses:
-- A 195W monocrystalline solar panel
-- 12.8V 20Ah lithium battery bank
-- MPPT charge controller
-- 2000W/4000W pure sine wave inverter
-- Hydrogen fuel cell system for supplemental power
-- IoT-enabled DAQ system for real-time monitoring and data logging
-
-## Safety Guidelines
-- Always install in a dry area.
-- Use insulated tools and wear PPE.
-- Avoid working alone.
-- Follow manufacturer guidelines strictly.
-- Handle batteries and wiring with care.
-- Maintain adequate ventilation.
-
-## System Components
-- **Solar Panel**: 195W monocrystalline, outputs 18V at 10.83A
-- **Batteries**: 12.8V, 20Ah LiFePO₄ with BMS
-- **Inverter**: Converts 12V DC to 120V AC, 2000W/4000W
-- **Charge Controller**: Renogy MPPT, 30A max current
-- **DAQ System**: Includes Arduino Mega, STM32 IoT Board, INA sensors, thermocouples, multiplexer, TFT LCD, etc.
-- **Cart Structure**: Two-level mobile frame with solar panel top mount
-- **Hydrogen Fuel Cell Components**: Stack, controller, purge valve, tubing
-
-## Assembly Highlights
-- **Hinged Solar Panel**: Adjustable with triangular wooden support frame
-- **Component Mounting**: Batteries, inverter, DAQ box, and controllers placed strategically for stability and wiring efficiency
-
-## IoT Cloud Integration
-- **Board**: STM32 B-L475E-IOT01A2 with Mbed OS
-- **Cloud**: Microsoft Azure IoT Hub + Cosmos DB NoSQL
-- **Tools**: Azure CLI, PowerShell, Mbed Studio
-- **Features**: Real-time telemetry, data routing via custom endpoints and routes
-
-## Operation Instructions
-1. Deploy the cart in sunlight; adjust panel tilt (~30° in Houston).
-2. Activate kill switch and monitor MPPT screen.
-3. Verify voltage and current with multimeter.
-4. Use inverter to charge micro-mobility or portable devices.
-5. Monitor environmental data via DAQ sensors.
-6. Disconnect hydrogen tube after stack shutdown.
-
-## Sample Code & Configuration
-Refer to Appendix A in the documentation for I2C-based INA228 and MCP9601 initialization using Arduino IDE or Mbed Studio.
-
-## Contributors
-- [Team Member 1]
-- [Team Member 2]
-- [Team Member 3]
-- [Team Member 4]
-- [Team Member 5]
+## Team Members
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## Institution
 **The University of Texas at Tyler**  
 Department of Mechanical Engineering  
 College of Engineering - Houston Engineering Center
+
+---
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Safety Precautions](#safety-precautions)
+- [System Components](#system-components)
+- [System Design & Assembly](#system-design--assembly)
+- [Electrical Components Assembly](#electrical-components-assembly)
+- [Operating Instructions](#operating-instructions)
+- [IoT Cloud Setup & Operation (DISCO IoT Only)](#iot-cloud-setup--operation-disco-iot-only)
+- [Deployment & Testing](#deployment--testing)
+- [Appendix A: Sample Arduino Code](#appendix-a-sample-arduino-code)
+- [Appendices B–E](#appendices-be)
+
+---
+
+## Introduction
+This system harnesses solar energy and hydrogen fuel cells to charge devices. It includes:
+- An Arduino-based DAQ system for solar/fuel cell voltage and current monitoring (local only)
+- A DISCO IoT board for environmental data telemetry via Microsoft Azure.
+
+---
+
+## Safety Precautions
+- Install in dry areas
+- Use insulated tools and PPE
+- Avoid working alone
+- Handle batteries and wiring with care
+- Maintain regular inspections
+
+---
+
+## System Components
+
+### Charging Station Components
+- **195W Solar Panel**
+- **12.8V 20Ah LiFePO₄ Battery**
+- **2000W/4000W Inverter**
+- **Renogy MPPT Charge Controller**
+- **Custom Mobile Cart**
+
+### Arduino-Based DAQ (Local Monitoring)
+- Arduino Mega 2560 R3
+- 3x INA228 Current/Voltage Sensors
+- MCP9601 Thermocouple Amplifier
+- TFT LCD Display
+- TCA9548A I2C Multiplexer
+- K-Type Thermocouple
+
+### DISCO IoT-Based Cloud Telemetry
+- STM32 B-L475E-IOT01A2 Board
+- Built-in sensors (temperature, humidity, pressure, etc.)
+- Azure IoT Hub + CosmosDB Integration
+
+### Hydrogen Fuel Cell System
+- Stack, controller, purge valve, tubes
+
+---
+
+## System Design & Assembly
+- Two-tier cart: batteries + fuel cell on bottom, electronics on top
+- Hinged solar panel mount for angle adjustment
+- Modular wiring and ventilation cutouts
+
+---
+
+## Electrical Components Assembly
+- Solar panel → Charge controller
+- Charge controller → Battery
+- Battery → Inverter
+- Arduino → INA228 & MCP9601 (via TCA9548A)
+- DISCO board → Azure IoT Hub setup
+
+---
+
+## Operating Instructions
+
+### Fuel Cell Safety
+- Pressure: 0.45–0.55 Bar
+- Hydrogen purity ≥99.995%
+- Ventilation and purge safety required
+
+### Fuel Cell Operation
+1. Connect hydrogen
+2. Watch controller lights
+3. Connect purge valve
+4. Power load
+5. Disconnect hydrogen
+
+---
+
+## IoT Cloud Setup & Operation (DISCO IoT Only)
+
+### Phase 1: Azure Setup
+- Configure Wi-Fi in `mbed_app.json`
+- Register IoT Hub and device
+- Confirm telemetry with Mbed Studio or PowerShell
+
+### Phase 2: Send Sensor Data
+- Replace `main.cpp` with sensor reading code
+- Check Mbed Studio output
+
+### Phase 3: Route to CosmosDB
+- Create CosmosDB (NoSQL)
+- Define `/DeviceId` partition key
+- Route telemetry from IoT Hub
+
+---
+
+## Deployment & Testing
+
+### Solar Charging
+- Deploy cart outdoors
+- Align panel ~30° tilt
+- Verify MPPT or multimeter readings
+
+### Arduino Monitoring (Local Only)
+- Display voltage, current, and power from INA228 on LCD
+
+### DISCO IoT Cloud Monitoring
+- View telemetry on Azure via CosmosDB
+
+### Load Testing
+- Power USB/AC device via inverter
+
+---
+
+## Appendix A: Sample Arduino Code
+Includes:
+- TCA channel selection
+- INA228 and MCP9601 sensor reads
+- LCD printout of system readings
+
+---
+
+## Appendices B–E
+(Reserved for schematics, BOMs, and glossary)
