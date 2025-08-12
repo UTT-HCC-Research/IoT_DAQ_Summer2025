@@ -2,18 +2,25 @@
 
 <img src="https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/images/flowchart.png" alt="chart1" width="1000" height="500">
 
+## Supervising Faculty
+- Dr. M. A. Rafe Biswas
+- Dr. Reem Salim
+
 ## Team Members
-- 
-- 
-- 
-- 
-- 
-- 
+- Ahmad Alhjouj
+- Ahmed Ismail
+- Hector Villasana
+- Marvin Villagra
+- Maryam Mehryoon
+- Mustafa Kerem Yucedag
 
 ## Institution
 **The University of Texas at Tyler**  
 Department of Mechanical Engineering  
 College of Engineering - Houston Engineering Center
+
+**Houston Community College**
+Engineering Center of Excellence
 
 ---
 
@@ -124,6 +131,11 @@ This system harnesses solar energy and hydrogen fuel cells to charge devices. It
 
 ### Results from the Sample Dataset pulled from the System
 <img src="https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/images/plots.png" alt="chart2" width="1000" height="500">
+
+## DAQ System Schema
+<img src="https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/DAQ_Schema/DAQ System Schematic.png" alt="chart2" width="1000" height="500">
+
+If needed, edit the KiCAD files from [DAQ_Schema](https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/DAQ_Schema).
 
 ---
 
