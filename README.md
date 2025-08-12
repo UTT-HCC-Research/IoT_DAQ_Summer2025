@@ -135,7 +135,8 @@ This system harnesses solar energy and hydrogen fuel cells to charge devices. It
 ## DAQ System Schema
 <img src="https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/DAQ_Schema/DAQ System Schematic.png" alt="chart2" width="1000" height="500">
 
-If needed, edit the KiCAD files from [DAQ_Schema](https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/DAQ_Schema).
+- If needed, edit the KiCAD files from [DAQ_Schema](https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/DAQ_Schema).
+- Download the [LCD Display Code](https://github.com/UTT-HCC-Research/IoT_DAQ_Summer2025/blob/main/lcd_display.ino) and run it on your Arduino.
 
 ---
 
